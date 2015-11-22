@@ -1,0 +1,11 @@
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module 
+      fileurl="file://$PROJECT_DIR$/.idea_modules/apache-flink-scala-fun-build.iml" filepath="$PROJECT_DIR$/.idea_modules/apache-flink-scala-fun-build.iml">
+</module>
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/apache-flink-scala-fun.iml" filepath="$PROJECT_DIR$/.idea_modules/apache-flink-scala-fun.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/app.iml" filepath="$PROJECT_DIR$/.idea_modules/app.iml"/>
+    </modules>
+  </component>
+</project>
