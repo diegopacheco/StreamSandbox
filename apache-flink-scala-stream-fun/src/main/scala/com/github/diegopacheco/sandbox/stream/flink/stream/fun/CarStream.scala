@@ -32,10 +32,12 @@ object CarStream extends App {
       }
       
       carStream(range(0, numOfCars).map(CarEvent(_,50,0,System.currentTimeMillis())))
-  }
+   }
+   
+   print("Car Streams.. on Flink! ")
    
    val numOfCars = 2
-   val evictionSec = 10
+   val evictionSec = 1
    val triggerMeters = 50d
    
    val env = StreamExecutionEnvironment.getExecutionEnvironment
