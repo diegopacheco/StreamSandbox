@@ -55,5 +55,6 @@ object CarStream extends App {
       .maxBy("speed")
 
     topSeed.print
+    env.execute("CarStream")
   
 }
