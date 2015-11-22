@@ -31,9 +31,3 @@ lazy val commonSettings = Seq(
   organization := "com.github.diegopacheco.sandbox.stream.flink",
   scalaVersion := "2.11.7"
 )
-
-lazy val app = (project in file("app")).
-  settings(commonSettings: _*).
-  settings(
-    // your settings here
-  )

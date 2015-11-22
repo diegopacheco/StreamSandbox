@@ -15,7 +15,7 @@ import scala.math._
 import scala.language.postfixOps
 import scala.util.Random
 
-class CarStream extends App {
+object CarStream extends App {
     
    case class CarEvent(carId: Int, speed: Int, distance: Double, time: Long)
    
