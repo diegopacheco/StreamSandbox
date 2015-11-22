@@ -13,6 +13,8 @@ resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositor
 resolvers += "Twitter Repo" at "http://maven.twttr.com/"
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
+libraryDependencies += "org.apache.flink" % "flink-core" % "0.10.0"
+libraryDependencies += "org.apache.flink" % "flink-clients" % "0.10.0"
 libraryDependencies += "org.apache.flink" % "flink-scala" % "0.10.0"
 
 EclipseKeys.withSource := true
@@ -20,7 +22,7 @@ EclipseKeys.withSource := true
 lazy val commonSettings = Seq(
   version      := "1.0-SNAPSHOT",
   organization := "com.github.diegopacheco.sandbox.stream.flink",
-  scalaVersion := "2.10.6"
+  scalaVersion := "2.10.5"
 )
 
 lazy val app = (project in file("app")).
