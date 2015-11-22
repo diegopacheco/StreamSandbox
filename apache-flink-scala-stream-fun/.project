@@ -1,5 +1,5 @@
 <projectDescription>
-  <name>app</name>
+  <name>apache-flink-scala-stream-fun</name>
   <buildSpec>
     <buildCommand>
       <name>org.scala-ide.sdt.core.scalabuilder</name>
