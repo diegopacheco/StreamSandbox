@@ -25,3 +25,10 @@ libraryDependencies += "org.apache.flink" % "flink-streaming-scala_2.11" % "0.10
 
 
 EclipseKeys.withSource := true
+
+lazy val commonSettings = Seq(
+  version      := "1.0-SNAPSHOT",
+  organization := "com.github.diegopacheco.sandbox.stream.flink",
+  scalaVersion := "2.11.7"
+)
+
