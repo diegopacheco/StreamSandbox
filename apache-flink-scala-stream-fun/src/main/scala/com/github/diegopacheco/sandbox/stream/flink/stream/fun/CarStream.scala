@@ -37,14 +37,18 @@ object CarStream extends App {
    print("Car Streams.. on Flink! ")
    
    val numOfCars = 2
-   val evictionSec = 1
+   val evictionSec = 10
    val triggerMeters = 50d
    
    val env = StreamExecutionEnvironment.getExecutionEnvironment
    env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
    env.setParallelism(1)
-    
+   
+   print("Env: " + env)
+   
    val cars = env.fromCollection(genCarStream())
+   
+   print("Stream: " + cars)
    
    val topSeed = cars
       .assignAscendingTimestamps( _.time )
@@ -56,7 +60,11 @@ object CarStream extends App {
       }))
       .maxBy("speed")
 
+    print("Stream: " + cars)  
+      
     topSeed.print
     env.execute("CarStream")
+    
+    print("End")
   
 }
