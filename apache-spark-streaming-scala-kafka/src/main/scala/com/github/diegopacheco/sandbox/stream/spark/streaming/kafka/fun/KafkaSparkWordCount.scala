@@ -6,7 +6,7 @@ import org.apache.spark.SparkConf
 
 object KafkaSparkWordCount extends App {
   
-    val Array(zkQuorum, group, topics, numThreads) = Array[String]("localhost","my-consumer-group","test","1")
+    val Array(zkQuorum, group, topics, numThreads) = Array[String]("127.0.0.1:2181","my-consumer-group","test","1")
     val sparkConf = new SparkConf().setAppName("KafkaSparkStreamWordCount")
     val ssc = new StreamingContext(sparkConf, Seconds(2))
     ssc.checkpoint("checkpoint")
