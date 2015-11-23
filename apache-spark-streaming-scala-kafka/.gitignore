@@ -9,4 +9,5 @@ project/project/target/*
 /journal/
 /snapshots/
 /projectFilesBackup/
+/lib_managed/*
 
