@@ -6,7 +6,7 @@ import org.apache.kafka.clients.producer.{ProducerConfig, KafkaProducer, Produce
 
 object KafkaWordCountProducer  extends App {
     
-    val Array(brokers, topic, messagesPerSec, wordsPerMessage) = Array[String]("localhost","test","10","100")
+    val Array(brokers, topic, messagesPerSec, wordsPerMessage) = Array[String]("127.0.0.1:2181","test","10","100")
 
     val props = new HashMap[String, Object]()
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokers)
