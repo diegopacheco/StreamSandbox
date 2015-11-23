@@ -2,9 +2,9 @@ name := "apache-spark-streaming-scala-kafka"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.6"
 
-scalaVersion in ThisBuild := "2.11.7"
+scalaVersion in ThisBuild := "2.10.6"
 
 resolvers += "Akka Repo" at "http://repo.akka.io/releases" 
 resolvers += "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/"
@@ -22,5 +22,5 @@ EclipseKeys.withSource := true
 lazy val commonSettings = Seq(
   version      := "1.0-SNAPSHOT",
   organization := "com.github.diegopacheco.sandbox.stream.flink",
-  scalaVersion := "2.11.7"
+  scalaVersion := "2.10.6"
 )
