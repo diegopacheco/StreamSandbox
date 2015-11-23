@@ -2,6 +2,10 @@ name := "apache-spark-streaming-scala-kafka"
 
 version := "1.0"
 
+organization := "com.github.diegopacheco"
+
+publishMavenStyle := true
+
 scalaVersion := "2.10.6"
 
 scalaVersion in ThisBuild := "2.10.6"
@@ -20,7 +24,13 @@ libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.5.
 EclipseKeys.withSource := true
 
 lazy val commonSettings = Seq(
-  version      := "1.0-SNAPSHOT",
-  organization := "com.github.diegopacheco.sandbox.stream.flink",
+  version      := "1.0",
+  organization := "com.github.diegopacheco",
   scalaVersion := "2.10.6"
 )
+
+lazy val app = (project in file("app")).
+  settings(commonSettings: _*).
+  settings(
+    // your settings here
+  )
