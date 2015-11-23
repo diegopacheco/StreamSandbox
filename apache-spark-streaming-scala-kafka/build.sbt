@@ -13,9 +13,9 @@ resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositor
 resolvers += "Twitter Repo" at "http://maven.twttr.com/"
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
-libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "1.5.2"
-libraryDependencies += "org.apache.spark" % "spark-streaming_2.11" % "1.5.2"
-libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.11" % "1.5.2"
+libraryDependencies += "org.apache.spark" % "spark-core_2.10" % "1.5.2"
+libraryDependencies += "org.apache.spark" % "spark-streaming_2.10" % "1.5.2"
+libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.5.2"
 
 EclipseKeys.withSource := true
 
