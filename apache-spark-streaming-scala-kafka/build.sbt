@@ -1,3 +1,15 @@
+//
+// SBT Assembly: One Big FAT Jat for Spark
+//
+
+import AssemblyKeys._
+
+assemblySettings
+
+//
+// NORMAL SBT
+//
+
 name := "apache-spark-streaming-scala-kafka"
 
 version := "1.0"
@@ -23,16 +35,25 @@ libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.5.
 
 EclipseKeys.withSource := true
 
-lazy val commonSettings = Seq(
-  version      := "1.0",
-  organization := "com.github.diegopacheco",
-  scalaVersion := "2.10.6"
-)
+//
+// SBT Assembly: One Big FAT Jat for Spark
+//
 
-lazy val app = (project in file("app")).
-  settings(commonSettings: _*).
-  settings(
-    // your settings here
-  )
-  
-mainClass in assembly := Some("com.github.diegopacheco.sandbox.stream.spark.streaming.kafka.fun.KafkaSparkWordCount")
+mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
+  {
+    case PathList("javax", "servlet", xs @ _*) => MergeStrategy.last
+    case PathList("org", "apache", xs @ _*) => MergeStrategy.last
+    case PathList("com", "esotericsoftware", xs @ _*) => MergeStrategy.last
+    case "about.html" => MergeStrategy.rename
+    case x => old(x)
+  }
+}
+
+// put all libs in the lib_managed directory, that way we can distribute eclipse project files
+retrieveManaged := true
+    
+EclipseKeys.relativizeLibs := true
+    
+// Avoid generating eclipse source entries for the java directories
+(unmanagedSourceDirectories in Compile) <<= (scalaSource in Compile)(Seq(_))
+(unmanagedSourceDirectories in Test) <<= (scalaSource in Test)(Seq(_))
