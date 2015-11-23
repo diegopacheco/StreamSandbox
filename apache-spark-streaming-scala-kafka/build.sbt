@@ -34,3 +34,5 @@ lazy val app = (project in file("app")).
   settings(
     // your settings here
   )
+  
+mainClass in assembly := Some("com.github.diegopacheco.sandbox.stream.spark.streaming.kafka.fun.KafkaSparkWordCount")
