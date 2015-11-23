@@ -44,6 +44,9 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
     case PathList("javax", "servlet", xs @ _*) => MergeStrategy.last
     case PathList("org", "apache", xs @ _*) => MergeStrategy.last
     case PathList("com", "esotericsoftware", xs @ _*) => MergeStrategy.last
+    case PathList("com", "google", xs @ _*) => MergeStrategy.last
+    case PathList("org.apache.spark", "spark-network-common_2.10", xs @ _*) => MergeStrategy.last
+    case PathList(ps @ _*) if ps.last endsWith "pom.properties" => MergeStrategy.first 
     case "about.html" => MergeStrategy.rename
     case x => old(x)
   }
